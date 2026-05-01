@@ -5,8 +5,11 @@ const projectSchema = new mongoose.Schema({
   description: { type: String, required: true },
   image: { type: String, required: true },
   category: { type: String, required: true },
-  link: String,
-  github: String,
+  links: [{
+    type: { type: String },
+    label: { type: String },
+    href: { type: String }
+  }],
   tags: [String],
   featured: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },

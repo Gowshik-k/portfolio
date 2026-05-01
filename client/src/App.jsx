@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, ArrowRight, LayoutGrid, User, BookOpen } from 'lucide-react';
@@ -15,7 +15,7 @@ import Admin from './components/Admin.jsx';
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
@@ -23,7 +23,7 @@ const ScrollToTop = () => {
 
 // Components
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -68,8 +68,8 @@ const Navbar = () => {
             </Link>
           ))}
           <a
-            href="mailto:hello@designer.com"
-            className="px-6 py-2.5 bg-gradient-to-r from-brand-500 to-sky-600 hover:from-brand-600 hover:to-sky-700 text-white text-xs font-bold uppercase tracking-widest rounded-full transition-all shadow-[0_4px_20px_rgba(14,165,233,0.15)] hover:shadow-[0_4px_30px_rgba(14,165,233,0.25)] hover:scale-105 active:scale-95"
+            href="mailto:gowsikk8@gmail.com"
+            className="px-6 py-2.5 bg-gradient-to-r from-brand-500 to-sky-600 hover:from-brand-600 hover:to-sky-700 text-white text-xs font-bold uppercase tracking-widest rounded-full transition-all shadow-[0_4px_20px_rgba(14,165,233,0.15)] hover:shadow-[0_4px_30_rgba(14,165,233,0.25)] hover:scale-105 active:scale-95"
           >
             Hire Me
           </a>
@@ -114,10 +114,10 @@ const Navbar = () => {
               
               <div className="pt-8 mt-4 border-t border-slate-50 flex justify-between items-center">
                 <div className="flex gap-6">
-                  <a href="#" className="text-slate-400 hover:text-brand-500"><Github size={18} /></a>
-                  <a href="#" className="text-slate-400 hover:text-brand-500"><Linkedin size={18} /></a>
+                  <a href="https://github.com/Gowshik-k/" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-500"><Github size={18} /></a>
+                  <a href="https://www.linkedin.com/in/gowsik-k/" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-500"><Linkedin size={18} /></a>
                 </div>
-                <a href="mailto:hello@designer.com" className="text-[10px] font-bold uppercase tracking-widest text-brand-600">Contact Me</a>
+                <a href="mailto:gowsikk8@gmail.com" className="text-[10px] font-bold uppercase tracking-widest text-brand-600">Contact Me</a>
               </div>
             </div>
           </motion.div>
@@ -135,14 +135,20 @@ const Footer = () => (
         <p className="text-slate-500 max-w-md">Currently looking for new projects and collaborations. Feel free to reach out for business inquiries or just to say hi.</p>
       </div>
       <div className="flex flex-col gap-4">
-        <a href="mailto:hello@designer.com" className="group flex items-center gap-4 text-2xl font-serif text-slate-900 hover:text-brand-600 transition-colors">
-          hello@designer.com
+        <a href="mailto:gowsikk8@gmail.com" className="group flex items-center gap-4 text-2xl font-serif text-slate-900 hover:text-brand-600 transition-colors">
+          gowsikk8@gmail.com
           <ArrowRight className="text-brand-500 group-hover:translate-x-2 transition-transform" />
         </a>
         <div className="flex gap-6 mt-4">
-          <Github className="text-slate-400 hover:text-slate-900 cursor-pointer transition-colors" />
-          <Linkedin className="text-slate-400 hover:text-slate-900 cursor-pointer transition-colors" />
-          <Mail className="text-slate-400 hover:text-slate-900 cursor-pointer transition-colors" />
+          <a href="https://github.com/Gowshik-k/" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-slate-900 transition-colors">
+            <Github size={20} />
+          </a>
+          <a href="https://www.linkedin.com/in/gowsik-k/" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-slate-900 transition-colors">
+            <Linkedin size={20} />
+          </a>
+          <a href="mailto:gowsikk8@gmail.com" className="text-slate-400 hover:text-slate-900 transition-colors">
+            <Mail size={20} />
+          </a>
         </div>
       </div>
     </div>
@@ -154,11 +160,11 @@ const Footer = () => (
 );
 
 const Home = () => {
-  const [projects, setProjects] = React.useState([]);
-  const [settings, setSettings] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
+  const [projects, setProjects] = useState([]);
+  const [settings, setSettings] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const [projRes, setRes] = await Promise.all([
@@ -204,7 +210,7 @@ const Home = () => {
                 Explore Works
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <a href="mailto:hello@designer.com" className="px-6 py-3 md:px-8 md:py-4 border border-slate-200 text-slate-900 rounded-full font-bold uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-slate-50 transition-colors">
+              <a href="mailto:gowsikk8@gmail.com" className="px-6 py-3 md:px-8 md:py-4 border border-slate-200 text-slate-900 rounded-full font-bold uppercase tracking-widest text-[9px] md:text-[10px] hover:bg-slate-50 transition-colors">
                 Get in Touch
               </a>
             </div>
@@ -247,11 +253,14 @@ const Home = () => {
           ) : projects.length > 0 ? (
             <>
               {/* Large Featured (First Project) */}
-              <motion.div 
+              <motion.a 
+                href={projects[0].links?.find(l => l.type === 'demo')?.href || '#'}
+                target="_blank"
+                rel="noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group relative mb-8 md:mb-12"
+                className="group block relative mb-8 md:mb-12"
               >
                 <div className="aspect-video md:aspect-[21/9] overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-lg border border-slate-200 bg-slate-100">
                   <img 
@@ -265,17 +274,20 @@ const Home = () => {
                     <h3 className="text-2xl md:text-3xl font-serif text-white italic">{projects[0].title}.</h3>
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
 
               {/* Two Column Grid (Next Two Projects) */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {projects.slice(1, 3).map((project) => (
-                  <motion.div
+                  <motion.a
+                    href={project.links?.find(l => l.type === 'demo')?.href || '#'}
+                    target="_blank"
+                    rel="noreferrer"
                     key={project._id}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="group relative aspect-[4/3] bg-white overflow-hidden rounded-[1.2rem] md:rounded-[1.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500"
+                    className="group block relative aspect-[4/3] bg-white overflow-hidden rounded-[1.2rem] md:rounded-[1.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500"
                   >
                     <img
                       src={`${project.image}?auto=format&fit=crop&q=80&w=1200`}
@@ -287,7 +299,7 @@ const Home = () => {
                       <span className="text-brand-600 text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] block mb-1">{project.category}</span>
                       <h3 className="text-lg md:text-xl font-serif text-slate-900 italic">{project.title}</h3>
                     </div>
-                  </motion.div>
+                  </motion.a>
                 ))}
               </div>
             </>
@@ -405,19 +417,16 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
-        <AdminButton />
+        
+        {/* Admin Button for development/quick access */}
+        <Link 
+          to="/admin" 
+          className="fixed bottom-6 right-6 w-10 h-10 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full flex items-center justify-center text-white/20 hover:text-white/40 transition-all z-[100] backdrop-blur-sm"
+          title="Admin Login"
+        >
+          <User size={16} />
+        </Link>
       </div>
     </Router>
   );
 }
-
-// Sneaky Admin Button for development/quick access
-const AdminButton = () => (
-  <Link 
-    to="/admin" 
-    className="fixed bottom-6 right-6 w-10 h-10 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full flex items-center justify-center text-white/20 hover:text-white/40 transition-all z-[100] backdrop-blur-sm"
-    title="Admin Login"
-  >
-    <User size={16} />
-  </Link>
-);

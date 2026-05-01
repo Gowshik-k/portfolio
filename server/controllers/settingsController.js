@@ -8,7 +8,7 @@ export const getSettings = async (req, res) => {
       // Create default if not exists
       const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD || "admin123", 10);
       settings = new Settings({
-        adminEmail: process.env.ADMIN_EMAIL || "admin@example.com",
+        adminEmail: process.env.ADMIN_EMAIL || "gowsikk8@gmail.com",
         adminPassword: hashedPassword,
       });
       await settings.save();

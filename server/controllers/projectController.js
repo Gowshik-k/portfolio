@@ -23,7 +23,11 @@ export const updateProject = async (req, res) => {
   try {
     const updatedProject = await Project.findByIdAndUpdate(
       req.params.id,
-      { ...req.body, updatedAt: new Date() },
+      { 
+        ...req.body, 
+        links: req.body.links, // Explicitly ensure links are included
+        updatedAt: new Date() 
+      },
       { new: true }
     );
     if (!updatedProject) return res.status(404).json({ message: "Project not found" });
