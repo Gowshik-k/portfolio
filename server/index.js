@@ -3,7 +3,6 @@ dotenv.config();
 
 import express from "express";
 import cors from "cors";
-import { createServer as createViteServer } from "vite";
 import path from "path";
 import { fileURLToPath } from "url";
 import connectDB from "./config/db.js";
@@ -22,6 +21,7 @@ async function startServer() {
   // Connect to Database
   await connectDB();
 
+  // CORS Configuration
   app.use(cors({
     origin: process.env.CORS_ORIGIN || "*",
     credentials: true
@@ -29,37 +29,28 @@ async function startServer() {
 
   app.use(express.json());
 
-  // Routes
+  // API Routes
   app.use("/api/auth", authRoutes);
   app.use("/api/projects", projectRoutes);
   app.use("/api/settings", settingsRoutes);
 
-  // API health check
+  // Health check
   app.get("/api/health", (req, res) => {
     res.json({ 
       status: "ok", 
+      message: "Portfolio API is running",
       mongodb: mongoose.connection.readyState === 1 
     });
   });
 
-  // Vite middleware for development / Static files for production
-  if (process.env.NODE_ENV !== "production") {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: "spa",
-      root: path.join(__dirname, "../client"),
-    });
-    app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(__dirname, "../client/dist");
-    app.use(express.static(distPath));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
-    });
-  }
+  // Global Error Handler
+  app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: "Something went wrong on the server" });
+  });
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`🚀 API Server running on port ${PORT}`);
   });
 }
 
