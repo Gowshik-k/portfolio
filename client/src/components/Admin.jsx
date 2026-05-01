@@ -27,7 +27,8 @@ const Admin = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch('/api/projects');
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || '';
+      const res = await fetch(`${baseUrl}/api/projects`);
       const data = await res.json();
       setProjects(data);
     } catch (error) {
@@ -37,7 +38,8 @@ const Admin = () => {
 
   const fetchSettings = async () => {
     try {
-      const res = await fetch('/api/settings');
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || '';
+      const res = await fetch(`${baseUrl}/api/settings`);
       const data = await res.json();
       setSettings(data);
     } catch (error) {
@@ -59,7 +61,8 @@ const Admin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/auth/login', {
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || '';
+      const res = await fetch(`${baseUrl}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(loginData)
@@ -86,7 +89,8 @@ const Admin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = editingId ? `/api/projects/${editingId}` : '/api/projects';
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || '';
+      const url = editingId ? `${baseUrl}/api/projects/${editingId}` : `${baseUrl}/api/projects`;
       const method = editingId ? 'PUT' : 'POST';
       const res = await fetch(url, {
         method,
@@ -123,7 +127,8 @@ const Admin = () => {
     e.preventDefault();
     setSettingsLoading(true);
     try {
-      const res = await fetch('/api/settings', {
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || '';
+      const res = await fetch(`${baseUrl}/api/settings`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
@@ -145,7 +150,8 @@ const Admin = () => {
 
   const handleDelete = async (id) => {
     if (confirm("Are you sure?")) {
-      const res = await fetch(`/api/projects/${id}`, {
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || '';
+      const res = await fetch(`${baseUrl}/api/projects/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${user.token}` }
       });

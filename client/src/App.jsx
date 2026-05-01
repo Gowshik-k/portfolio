@@ -167,9 +167,10 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || '';
         const [projRes, setRes] = await Promise.all([
-          fetch("/api/projects"),
-          fetch("/api/settings")
+          fetch(`${baseUrl}/api/projects`),
+          fetch(`${baseUrl}/api/settings`)
         ]);
         const projData = await projRes.json();
         const setData = await setRes.json();

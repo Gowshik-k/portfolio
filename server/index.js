@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
+import cors from "cors";
 import { createServer as createViteServer } from "vite";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -20,6 +21,11 @@ async function startServer() {
 
   // Connect to Database
   await connectDB();
+
+  app.use(cors({
+    origin: process.env.CORS_ORIGIN || "*",
+    credentials: true
+  }));
 
   app.use(express.json());
 
