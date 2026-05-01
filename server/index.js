@@ -29,6 +29,11 @@ async function startServer() {
 
   app.use(express.json());
 
+  // Root Route
+  app.get("/", (req, res) => {
+    res.send("<h1>Gowshik's Portfolio API</h1><p>Status: Online</p>");
+  });
+
   // API Routes
   app.use("/api/auth", authRoutes);
   app.use("/api/projects", projectRoutes);
