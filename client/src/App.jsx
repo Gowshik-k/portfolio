@@ -197,14 +197,14 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="lg:col-span-7 text-center lg:text-left"
           >
-            <span className="text-brand-600 font-sans font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-6 block">Visual Designer & Developer</span>
+            <span className="text-brand-600 font-sans font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] mb-6 block">B.Tech IT Student & Aspiring Developer</span>
             <h1 className="text-4xl md:text-6xl xl:text-7xl font-serif font-bold tracking-tight text-slate-900 mb-8 leading-[1.1] lg:leading-[0.9]">
               Turning <br className="hidden md:block" />
               <span className="italic text-gradient">logic</span> into <br className="hidden md:block" />
-              visual <span className="text-brand-500">poetry.</span>
+              digital <span className="text-brand-500">solutions.</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-500 max-w-md mx-auto lg:mx-0 leading-relaxed mb-10">
-              I build high-end digital experiences where technical precision meets aesthetic excellence. Let's make your vision legendary.
+              I am a passionate student building modern web experiences. Focused on learning, crafting, and solving problems through code.
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-5 items-center">
               <Link to="/projects" className="group px-6 py-3 md:px-8 md:py-4 bg-slate-900 text-white rounded-full font-bold uppercase tracking-widest text-[9px] md:text-[10px] flex items-center gap-3 hover:bg-brand-600 transition-all shadow-xl shadow-brand-500/10">
@@ -355,12 +355,12 @@ const Home = () => {
             <h4 className="text-3xl md:text-4xl font-serif font-bold italic">Execution.</h4>
             <div className="flex gap-8 md:gap-16">
               <div>
-                <div className="text-5xl md:text-7xl font-bold font-serif italic mb-1">99%</div>
-                <div className="text-[10px] uppercase tracking-widest text-white/70">Efficiency</div>
+                <div className="text-5xl md:text-7xl font-bold font-serif italic mb-1">100%</div>
+                <div className="text-[10px] uppercase tracking-widest text-white/70">Dedication</div>
               </div>
               <div>
-                <div className="text-5xl md:text-7xl font-bold font-serif italic mb-1">20+</div>
-                <div className="text-[10px] uppercase tracking-widest text-white/70">Partners</div>
+                <div className="text-5xl md:text-7xl font-bold font-serif italic mb-1">10+</div>
+                <div className="text-[10px] uppercase tracking-widest text-white/70">Projects</div>
               </div>
             </div>
             <p className="text-sm md:text-base text-white/80 max-w-md italic">
@@ -374,28 +374,28 @@ const Home = () => {
 };
 const About = () => (
   <div className="pt-40 pb-20 px-6 max-w-7xl mx-auto">
-    <h1 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-20 italic">Curiosity-driven <span className="text-brand-500">design.</span></h1>
+    <h1 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-20 italic">Learning-driven <span className="text-brand-500">development.</span></h1>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
       <div className="space-y-8 text-slate-600 text-lg leading-relaxed">
-        <p>I am a designer with over 5 years of experience in creating digital products that are both beautiful and functional. My background in computer science allows me to bridge the gap between design and development effortlessly.</p>
-        <p>I believe that the best designs are not just seen, but felt. Every pixel should serve a purpose, and every interaction should feel natural.</p>
+        <p>I am a B.Tech Information Technology student with a strong passion for web development and software engineering. I am dedicated to learning modern technologies and building functional digital solutions that solve real-world problems.</p>
+        <p>While I am at the beginning of my professional journey, I am constantly sharpening my skills in the MERN stack, UI design, and creative problem-solving. I believe in the power of clean code and intuitive user experiences.</p>
       </div>
       <div className="grid grid-cols-2 gap-8">
         <div>
           <h4 className="text-slate-900 text-[10px] font-bold uppercase tracking-[0.3em] mb-6 text-brand-600">Core Skills</h4>
           <ul className="space-y-3 text-sm text-slate-500">
-            <li className="flex items-center gap-2"><div className="w-1 h-1 bg-brand-500 rounded-full" /> UI/UX Design</li>
-            <li className="flex items-center gap-2"><div className="w-1 h-1 bg-brand-500 rounded-full" /> Brand Identity</li>
-            <li className="flex items-center gap-2"><div className="w-1 h-1 bg-brand-500 rounded-full" /> React Development</li>
-            <li className="flex items-center gap-2"><div className="w-1 h-1 bg-brand-500 rounded-full" /> Motion Graphics</li>
+            <li className="flex items-center gap-2"><div className="w-1 h-1 bg-brand-500 rounded-full" /> Web Development</li>
+            <li className="flex items-center gap-2"><div className="w-1 h-1 bg-brand-500 rounded-full" /> MERN Stack</li>
+            <li className="flex items-center gap-2"><div className="w-1 h-1 bg-brand-500 rounded-full" /> UI/UX Fundamentals</li>
+            <li className="flex items-center gap-2"><div className="w-1 h-1 bg-brand-500 rounded-full" /> Problem Solving</li>
           </ul>
         </div>
         <div>
-          <h4 className="text-slate-900 text-[10px] font-bold uppercase tracking-[0.3em] mb-6 text-brand-600">Experience</h4>
+          <h4 className="text-slate-900 text-[10px] font-bold uppercase tracking-[0.3em] mb-6 text-brand-600">Education</h4>
           <ul className="space-y-3 text-sm text-slate-500">
-            <li>Senior Designer @ Air</li>
-            <li>Lead Designer @ Flow</li>
-            <li>Freelance @ Various</li>
+            <li>B.Tech Information Technology</li>
+            <li>Self-taught Developer</li>
+            <li>Open Source Enthusiast</li>
           </ul>
         </div>
       </div>
