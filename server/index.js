@@ -29,9 +29,15 @@ async function startServer() {
 
   app.use(express.json());
 
+  // Request Logger
+  app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+    next();
+  });
+
   // Root Route
   app.get("/", (req, res) => {
-    res.send("<h1>Gowshik's Portfolio API</h1><p>Status: Online</p>");
+    res.json({ message: "Portfolio API is online", timestamp: new Date() });
   });
 
   // API Routes
@@ -54,8 +60,8 @@ async function startServer() {
     res.status(500).json({ message: "Something went wrong on the server" });
   });
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`🚀 API Server running on port ${PORT}`);
+  app.listen(PORT, () => {
+    console.log(`🚀 API Server listening on port ${PORT}`);
   });
 }
 
