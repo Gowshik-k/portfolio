@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
 **/node_modules/
+**/.package-lock.json
 
 # Build outputs
 dist/
@@ -12,8 +13,8 @@ build/
 .env
 .env.local
 .env.*.local
-**/ .env
-**/ .env.local
+**/.env
+**/.env.local
 
 # Logs
 *.log
